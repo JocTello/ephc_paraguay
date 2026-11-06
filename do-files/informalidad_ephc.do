@@ -7,6 +7,7 @@
 * Fijar el directorio de trabajo
 
 *---> Abrir el archivo de datos: reg02_EPHC_3er Trim 2026.dta
+use "archivos_dta_ine/e6d49-REG02_EPHC_3er Trim 2026.dta"
 
 * Construcción de variables
 egen hogar_id = group(upm nvivi nhoga)
@@ -111,7 +112,7 @@ test edad edad_sq
 
 margins, dydx(mujer añoest rural jefe hijos_menor6 ln_horas ln_tam_hogar n_menor15)
 marginsplot, horizontal xline(0) recast(scatter) title("Efectos marginales promedio") xtitle("Cambio en P(informal | X)")
-graph export "fig_efectos_marginales.png", replace width(1200)
+graph export "resultados/f1_efectos_marginales.png", replace width(1200)
 
 * Probabilidad estimada por edad y sexo
 
@@ -121,7 +122,7 @@ margins, dydx(edad)
 
 margins mujer, at(edad = (15(5)75))
 marginsplot, xdimension(edad) title("Probabilidad estimada de informalidad según edad y sexo") ytitle("Pr(informal | X)") legend(order(1 "Hombres" 2 "Mujeres"))
-graph export "fig_prob_edad_sexo.png", replace width(1200)
+graph export "resultados/f2_prob_edad_sexo.png", replace width(1200)
 
 * Clasificación
 
