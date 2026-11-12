@@ -92,7 +92,7 @@ estimates store m_base
 logit informal edad edad_sq i.mujer añoest i.rural ib1.region i.jefe ib1.est_civil ln_tam_hogar i.hijos_menor6 n_menor15 ln_horas ib8.rama ib9.ocup
 estimates store m_logit
 
-* Modelo Logit Ponderado
+* Modelo Logit Robusto a la Heterocedasticidad en el grupo (UPM)
 logit informal edad edad_sq i.mujer añoest i.rural ib1.region i.jefe ib1.est_civil ln_tam_hogar i.hijos_menor6 n_menor15 ln_horas ib8.rama ib9.ocup, vce(cluster upm)
 estimates store m_logit_robust
 
